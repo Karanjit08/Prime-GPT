@@ -21,8 +21,6 @@ var WelcomeHeader = () => {
         <div className="header-search-icon">
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </div>
-        <a>Home</a>
-        <a>Movies</a>
         <button className="join-prime-header">Join Prime</button>
 
       </div>
