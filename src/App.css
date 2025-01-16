@@ -177,8 +177,15 @@
   opacity: 0.7;
 }
 
+/* WELCOME SCREEN BODY ENDING */
+
+/* WELCOME SCREEN FOOTER STARTING */
 
 .welcome-footer {
   height: 20vh;
-  background-color: wheat;
+  background-color: #282828;
 }
+
+
+
+/* WELCOME SCREEN FOOTER ENDING */
