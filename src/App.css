@@ -184,6 +184,27 @@
 .welcome-footer {
   height: 20vh;
   background-color: #282828;
+  display: flex; /* Enables flexbox */
+  flex-direction: column; /* Stacks items vertically */
+  justify-content: center; /* Centers items vertically */
+  align-items: center; /* Centers items horizontally */
+  text-align: center; /* Aligns text in the center */
+  gap: 8px;
+}
+.affiliate{
+  color: #5D8AA8;
+}
+.terms-condition{
+  display: flex;
+  color: #3E8EDE;
+  gap: 20px;
+}
+.terms-condition > p {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.terms-condition > p:hover{
+  color: #AFDBF5;
 }
 
 
