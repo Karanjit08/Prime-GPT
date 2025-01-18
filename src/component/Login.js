@@ -1,5 +1,6 @@
 import "../App.css";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import { validateSignInData,validateSignUpData } from "../utils/validate";
 
 const Login = () => {
 
@@ -42,6 +43,18 @@ const Login = () => {
 };
 
 var SignInContainer = () => {
+
+  let [errorMessage,setErrorMessage] = useState(null);
+  let email = useRef();
+  let password = useRef();
+  let submitData = () => {
+    console.log(email.current.value);
+    console.log(password.current.value)
+
+    var message = validateSignInData(email.current.value,password.current.value);
+    console.log(message);
+    setErrorMessage(message);
+  }
   return (
     <div className="sign-in-container">
         <div className="sign-in-box">
@@ -51,12 +64,13 @@ var SignInContainer = () => {
           <div className="login-form">
             <form>
               <label>Email or mobile phone number</label>
-              <input type="text" className="input-box" />
+              <input ref={email} type="text" className="input-box" />
               <label>Password</label>
-              <input type="text" className="input-box" />
+              <input ref={password} type="text" className="input-box" />
             </form>
           </div>
-          <button className="continue-btn">
+          <b className="error-text">{errorMessage}</b>
+          <button className="continue-btn" onClick={submitData}>
             <h4>Continue</h4>
           </button>
           <AggrementText />
@@ -66,6 +80,21 @@ var SignInContainer = () => {
 }
 
 var SignUpContainer = () => {
+
+  let [errorSignUpMessage,setErrorSignUpMessage] = useState(null);
+  let emailSignUp = useRef();
+  let passwordSignUp = useRef();
+  let nameSigUp = useRef();
+  let submitSignUpData = () => {
+    console.log(emailSignUp.current.value);
+    console.log(passwordSignUp.current.value);
+    console.log(nameSigUp.current.value);
+
+    var message = validateSignUpData(emailSignUp.current.value,passwordSignUp.current.value,nameSigUp.current.value);
+    console.log(message);
+    setErrorSignUpMessage(message);
+  }
+
   return (
     <div className="sign-in-container">
         <div className="sign-in-box">
@@ -75,14 +104,15 @@ var SignUpContainer = () => {
           <div className="login-form">
             <form>
             <label>Name</label>
-              <input type="text" className="input-box" />
+              <input ref={nameSigUp} type="text" className="input-box" />
               <label>Email or mobile phone number</label>
-              <input type="text" className="input-box" />
+              <input ref={emailSignUp} type="text" className="input-box" />
               <label>Password</label>
-              <input type="text" className="input-box" />
+              <input ref={passwordSignUp} type="text" className="input-box" />
             </form>
           </div>
-          <button className="continue-btn">
+          <b className="error-text">{errorSignUpMessage}</b>
+          <button className="continue-btn" onClick={submitSignUpData}>
             <h4>Continue</h4>
           </button>
           <AggrementText />

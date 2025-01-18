@@ -319,12 +319,17 @@
 .input-box:focus{
   border: 3px solid #004953;
 }
+.error-text{
+  color:   rgb(200, 39, 39);
+  
+}
 .continue-btn{
   width: 320px;
   height: 30px;
   border-radius: 30px;
   border: none;
   background-color: #FFBF00;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 .continue-btn:hover{
