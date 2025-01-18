@@ -97,6 +97,10 @@
 .join-prime-header:hover {
   background-color: #318CE7;
 }
+.join-prime-link{
+  text-decoration: none;
+  color: white;
+}
 
 /* WELCOME SCREEN HEADER ENDING */
 
@@ -133,6 +137,9 @@
   font-weight: bold;
   color: white;
   margin: 0px 16px 16px 0px;
+}
+.body-info-logo {
+  opacity: 0.7;
 }
 
 .sign-in-btn {
@@ -173,8 +180,63 @@
   background-color: #dcdcdf;
 }
 
-.body-info-logo {
-  opacity: 0.7;
+.welcome-body-channels{
+  width: 100%;
+  height: 500px;
+  display: flex;
+}
+.channel-message {
+  width: 45%;
+  height: 500px;
+  /* background-color: #007FFF; */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: start;
+  align-items: center;
+}
+
+.channel-message > div {
+  width: 100%;
+  background-color: black;
+}
+
+.channel-message-title > h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+}
+
+.channel-message-sub-title > h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+.channel-logo {
+  width: 55%;
+  height: 500px;
+  /* background-color: pink; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.c-logo {
+  width: 200px;
+  height: 140px;
+  border-radius: 10px;
+  background-color:#007FFF;
+}
+.c-logo > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+.c-logo:hover > img {
+  transform: scale(1.1); /* Zoom in the image on hover */
 }
 
 /* WELCOME SCREEN BODY ENDING */
@@ -207,6 +269,138 @@
   color: #AFDBF5;
 }
 
-
-
 /* WELCOME SCREEN FOOTER ENDING */
+
+/* LOGIN SCREEN STARTING */
+
+.login-body{
+  width: 100vw;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.login-logo{
+  margin-top: 20px;
+}
+.sign-in-container{
+  width: 350px;
+  height: auto;
+  border-radius: 12px;
+  border-style: solid;
+  border-color: #d3d3d3;
+  border-width: 2px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sign-in-box{
+  width: 320px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-box {
+  width: 300px; /* Width of the input box */
+  height: 30px; /* Height of the input box */
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border: 1px solid black; /* Initial border color */
+  border-radius: 5px; /* Rounded corners */
+  padding: 5px 10px; /* Inner padding for text */
+  font-size: 16px; /* Font size */
+  outline: none; /* Remove default focus outline */
+  transition: border 0.3s ease; /* Smooth transition for border color */
+}
+.input-box:focus{
+  border: 3px solid #004953;
+}
+.continue-btn{
+  width: 320px;
+  height: 30px;
+  border-radius: 30px;
+  border: none;
+  background-color: #FFBF00;
+  transition: background-color 0.3s ease;
+}
+.continue-btn:hover{
+  background-color: rgb(230, 213, 89);
+}
+.continue-btn > h4 {
+  color: black;
+  font-weight: 400;
+}
+.agreement-text {
+  font-size: 12px;
+  color: #555; /* Default text color */
+  line-height: 1.5; /* Spacing between lines */
+}
+
+.hover-link {
+  color: #0073e6; /* Default link color */
+  text-decoration: none; /* No underline initially */
+  cursor: pointer; /* Pointer cursor to indicate a link */
+  transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.hover-link:hover {
+  color:  rgb(200, 39, 39);; /* Hover color */
+  text-decoration: underline; /* Underline on hover */
+}
+
+
+.new-to-amazon{
+  width: 350px;
+  height: auto;
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.new-to-amazon > .divider {
+  width: 100px;
+  height: 1.4px;
+  background-color: #d3d3d3;
+  border-radius: 2px;
+}
+.new-to-amazon > .divider-text{
+  color: #808080;
+}
+.sign-up-btn{
+  width: 350px;
+  height: 30px;
+  border-radius: 25px;
+  border-color: black;
+  border-width: 1px;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.sign-up-btn:hover{
+  background-color: whitesmoke;
+}
+.divider{
+  width: calc(100vw - 40px);
+  height: 2px;
+  background-color: #d3d3d3;
+  box-sizing: border-box;
+}
+.terms-condition-login{
+  display: flex;
+  color: #3E8EDE;
+  gap: 20px;
+}
+.terms-condition-login > p {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.terms-condition-login > p:hover{
+  color: rgb(200, 39, 39);
+  text-decoration: underline;
+}
+
+/* LOGIN SCREEN ENDING */

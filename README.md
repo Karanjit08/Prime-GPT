@@ -4,7 +4,8 @@
 # Features:
 
 <!-- PAGE 1: -->
---> Login (SignIn / SignUp)
+--> Welcome Screen (Before SignIn / SignUp) (COMPLETED)
+--> Login (SignIn / SignUp) (IN PROGRESS)
 --> Home Screen (After authentication)
 
 <!-- PAGE 2:  -->
