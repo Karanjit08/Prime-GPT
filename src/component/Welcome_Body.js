@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 var WelcomeBody = () => {
 
 
@@ -66,7 +68,7 @@ var WelcomeSection = ({imageUrl,title,subTitle,btnName}) => {
       <h3>
         {subTitle}
       </h3>
-      <button className="sign-in-btn">{btnName}</button>
+      <button className="sign-in-btn"><Link to={"/login"} className="join-prime-link-body">{btnName}</Link></button>
     </div>
   </div>
   );
