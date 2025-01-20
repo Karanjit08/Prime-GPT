@@ -249,7 +249,7 @@
 /* WELCOME SCREEN FOOTER STARTING */
 
 .welcome-footer {
-  height: 20vh;
+  height: 18vh;
   background-color: #282828;
   display: flex; /* Enables flexbox */
   flex-direction: column; /* Stacks items vertically */
