@@ -6,8 +6,8 @@
 <!-- PAGE 1: -->
 --> Welcome Screen (Before SignIn / SignUp) (COMPLETED)
 --> Login (SignIn / SignUp) Screen (COMPLETED)
---> Login (SignIn / SignUp) Authentication (IN PROGRESS)
---> Home Screen (After authentication) 
+--> Login (SignIn / SignUp) Authentication (COMPLETED)
+--> Home Screen (After authentication) (COMPLETED)
 
 <!-- PAGE 2:  -->
 HEADER: --> Header with Image in background and some text
