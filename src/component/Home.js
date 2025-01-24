@@ -1,11 +1,16 @@
-
-import React from 'react'
-import '../App.css'
+import React from "react";
+import "../App.css";
+import { useSelector } from "react-redux";
+import HomeScreenHeader from "./Home_Screen_Header";
 
 const Home = () => {
-  return (
-    <div className='home-text'>Home</div>
-  )
-}
+  var selector = useSelector((store) => store.user);
 
-export default Home
+  return (
+    <div className="home-screen">
+      <HomeScreenHeader />
+    </div>
+  );
+};
+
+export default Home;

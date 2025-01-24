@@ -414,3 +414,100 @@
 }
 
 /* LOGIN SCREEN ENDING */
+
+/* HOME SCREEN STARTING */
+
+
+.home-screen{
+  width: 100vw;
+  /* background-color: black; */
+}
+.home-screen-header{
+  width: 100vw;
+  height: 10vh;
+  background-color: black;
+  display: flex;
+}
+.h-header-left{
+  width: 70vw;
+  height: 10vh;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.h-header-left > a {
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 18px; /* Adjust font size if necessary */
+  padding: 10px 10px; /* Add padding for better hover effect */
+  border-radius: 5px; /* Add rounded corners */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+.h-header-left > a:hover{
+  cursor: pointer;
+  background-color: white; /* Change background to white on hover */
+  color: black; /* Change text color to match the red background */
+}
+
+.h-header-right{
+  width: 30vw;
+  height: 10vh;
+  /* background-color: greenyellow; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.profile-logo > img {
+  height: 45px;
+  width: auto;
+  cursor: pointer;
+}
+.profile-logo{
+  border-radius: 50%;
+  transition: border 0.3s ease; 
+}
+.profile-logo:hover {
+  border: 5px solid white;
+}
+
+.chat-button-header{
+  background-color: #007FFF;
+  color: white;
+  padding: 10px 10px;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s ease;
+  font-weight: 400;
+  font-size: 18px;
+  cursor: pointer;
+}
+.chat-button-header:hover{
+  background-color: #318CE7;
+}
+.drop-down-profile > ul {
+  list-style-type: none;
+}
+.drop-down-profile > ul > li {
+  cursor: pointer;
+}
+
+.drop-down-profile{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 4.5rem;
+  right: 4rem;
+  width: 100px;
+  padding: 16px;
+  background-color: wheat;
+  border: 1px solid grey;
+  justify-content: space-evenly;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+
+/* HOME SCREEN ENDING */
