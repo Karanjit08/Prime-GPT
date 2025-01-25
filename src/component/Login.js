@@ -107,6 +107,7 @@ var SignInContainer = () => {
 
 var SignUpContainer = () => {
   var navigator = useNavigate();
+
   let [errorSignUpMessage, setErrorSignUpMessage] = useState(null);
   let emailSignUp = useRef();
   let passwordSignUp = useRef();
