@@ -6,9 +6,12 @@ import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // THIS react.strict mode I have commented, because of this api calls are happening 
+  // twice because strict follows some protocols and rendering processes so it calls the 
+  // API twice 
+  // <React.StrictMode>
     <App />
-  </React.StrictMode>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

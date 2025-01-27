@@ -1,7 +1,7 @@
 import { useState } from "react";
 import DropDownProfile from "./Drop_Down_Profile";
 
-var HomeScreenHeader = () => {
+var HomeHeader = () => {
 
     var [openProfileDropDown,setOpenProfileDropDown] = useState(false);
 
@@ -44,4 +44,4 @@ var HomeScreenHeader = () => {
   );
 };
 
-export default HomeScreenHeader;
+export default HomeHeader;

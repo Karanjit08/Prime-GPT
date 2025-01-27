@@ -417,6 +417,8 @@
 
 /* HOME SCREEN STARTING */
 
+/* HOME SCREEN HEADER STARTING */
+
 
 .home-screen{
   width: 100vw;
@@ -509,5 +511,6 @@
   overflow: hidden;
 }
 
+/* HOME SCREEN HEADER ENDING */
 
 /* HOME SCREEN ENDING */

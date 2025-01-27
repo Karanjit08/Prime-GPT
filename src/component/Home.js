@@ -1,14 +1,16 @@
 import React from "react";
 import "../App.css";
 import { useSelector } from "react-redux";
-import HomeScreenHeader from "./Home_Screen_Header";
+import HomeHeader from "./Home_Header";
+import HomeBody from "./Home_Body";
 
 const Home = () => {
   var selector = useSelector((store) => store.user);
 
   return (
     <div className="home-screen">
-      <HomeScreenHeader />
+      <HomeHeader />
+      <HomeBody />
     </div>
   );
 };
