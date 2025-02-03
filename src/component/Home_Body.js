@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { options } from "../utils/Utility";
+import { useSelector } from "react-redux";
 
 
 
@@ -14,6 +15,9 @@ var HomeBody = () => {
         console.log(popularMovieLists.results);
     }
 
+    var userLoginDataMap = useSelector((store) => store.user);
+    var userData = Object.entries(userLoginDataMap); // Converting map to array
+
 
     useEffect(() => {
         getPopularMovieLists();
@@ -21,6 +25,14 @@ var HomeBody = () => {
 
     return (
         <div>
+            <h2>User Data</h2>
+            <ul>
+                {userData.map(([key, value]) => (
+                    <li key={key}>
+                        <b>{key} {value}</b>
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 }
