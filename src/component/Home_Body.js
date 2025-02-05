@@ -1,23 +1,26 @@
-import { useDispatch } from "react-redux";
 import { options } from "../utils/Utility";
-import { addMovies } from "../utils/movieSlice";
-import { useEffect, useState } from "react";
+import useMovieList from "../Hooks/useMovieList";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 
 var HomeBody = () => {
 
     var [movieTrailerList,setMovieTrailerList] = useState([]);
-    var dispatch = useDispatch();
-    var movieId;
-    var getPopularMovieLists = async() => {
-      var data = await fetch('https://api.themoviedb.org/3/movie/popular?page=1',options);
-      var popularMovieLists = await data.json();
-      console.log(popularMovieLists.results);
-      movieId = popularMovieLists.results[1].id;
-      console.log(movieId);
-      dispatch(addMovies(popularMovieLists.results));
-      getMovieTrailer(movieId);
-  }
-  
+//     var getPopularMovieLists = async() => {
+//       var data = await fetch('https://api.themoviedb.org/3/movie/popular?page=1',options);
+//       var popularMovieLists = await data.json();
+//       console.log(popularMovieLists.results);
+//       movieId = popularMovieLists.results[1].id;
+//       console.log(movieId);
+//       dispatch(addMovies(popularMovieLists.results));
+//       getMovieTrailer(movieId);
+//   }
+
+    useMovieList();
+    var movieData = useSelector((data) => data.movie.movies[0]);
+    console.log('printing....')
+    console.log(movieData)
+    // getMovieTrailer(movieData.id);
   
   
   var getMovieTrailer = async(movieId) => {
@@ -28,9 +31,7 @@ var HomeBody = () => {
     console.log(movieTrailer);
   }
   
-  useEffect(() => {
-      getPopularMovieLists();
-  },[])
+
 
     return (
         <div>
