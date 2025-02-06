@@ -1,51 +1,47 @@
 import { options } from "../utils/Utility";
 import useMovieList from "../Hooks/useMovieList";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import useMovieTrailer from "../Hooks/useMovieTrailer";
 
 var HomeBody = () => {
 
-    var [movieTrailerList,setMovieTrailerList] = useState([]);
-//     var getPopularMovieLists = async() => {
-//       var data = await fetch('https://api.themoviedb.org/3/movie/popular?page=1',options);
-//       var popularMovieLists = await data.json();
-//       console.log(popularMovieLists.results);
-//       movieId = popularMovieLists.results[1].id;
-//       console.log(movieId);
-//       dispatch(addMovies(popularMovieLists.results));
-//       getMovieTrailer(movieId);
-//   }
 
-    useMovieList();
-    var movieData = useSelector((data) => data.movie.movies[0]);
-    console.log('printing....')
-    console.log(movieData)
-    // getMovieTrailer(movieData.id);
-  
-  
-  var getMovieTrailer = async(movieId) => {
-    var data = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos`,options);
-    var movieTrailerData = await data.json();
-    var movieTrailer = movieTrailerData.results;
-    setMovieTrailerList(movieTrailer);
-    console.log(movieTrailer);
-  }
-  
+    // This will fetch the popular movies & add in the redux store
+  useMovieList();
+  // fetch the movies from the redux store
+  const movieData = useSelector((state) => state.movie.movies);
 
+  useEffect(() => {
+    console.log(movieData);
+  }, [movieData]);
 
-    return (
-        <div>
-        {
-            movieTrailerList.length === 0 ? <h3>Loading...</h3> :
-            movieTrailerList.map((trailer) =>(
-                <div key={trailer.id}>
-                <h2>{trailer.type}</h2>
-                </div>
-            )
-            )
-        } 
+   // Get first movie ID
+   const movieId = movieData?.[0]?.[0]?.id;
+   console.log("Selected ID:", movieId);
+
+    // Use the custom hook to fetch the teaser video
+  const { teaserVideo, loading } = useMovieTrailer(movieId);
+
+  return (
+    <div>
+      {loading ? (
+        <h3>Loading...</h3>
+      ) : teaserVideo ? (
+        <div key={teaserVideo.id}>
+          <h2>{teaserVideo.name}</h2>
+          <iframe
+            title={teaserVideo.name}
+            width="100%"
+            height="600"
+            src={`https://www.youtube.com/embed/${teaserVideo.key}?autoplay=1&mute=1`}
+          ></iframe>
         </div>
-    );
-}
+      ) : (
+        <h3>No teaser available</h3>
+      )}
+    </div>
+  );
+};
 
 export default HomeBody;
