@@ -513,4 +513,98 @@
 
 /* HOME SCREEN HEADER ENDING */
 
+
+/* HOME SCREEN VIDEO PLAYER */
+.home-body {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.movie-trailer-container{
+  position: relative;
+  background-color: rgba(0, 0, 0, 1);
+  width: 100%;
+  height: 100vh;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none; /* Prevents clicks on the video */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+}
+
+.movie-info {
+  position: absolute;
+  bottom: 50%;
+  left: 5%;
+  z-index: 2;
+  color: white;
+  max-width: 600px;
+}
+
+.movie-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.movie-overview {
+  font-size: 1.2rem;
+  max-width: 90%;
+}
+.buttons{
+  width: 280px;
+  position: absolute;
+  bottom: 40%;
+  z-index: 2;
+  left: 5%;
+  display: flex;
+  justify-content:space-between;
+}
+
+.play-movie{
+  background-color: #ffffff;
+  color: white;
+  padding: 12px 40px;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s ease;
+  font-weight: 400;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+}
+.play-movie > p, .play-movie > .button-icon {
+  color: black;
+}
+
+
+
 /* HOME SCREEN ENDING */
