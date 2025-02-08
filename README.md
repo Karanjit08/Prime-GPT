@@ -23,3 +23,4 @@ FOOTER: --> Prime Video Copyrights Info
 Prime-GPT
     --> Search Bar
     --> Movie Suggestion List
+

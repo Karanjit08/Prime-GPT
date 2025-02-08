@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import VideoBackgroundPlayer from "./VideoBackgroundPlayer";
 import VideoTitle from "./VideoTitle";
-import MovieList from "./MovieList";
+import PopularMovieList from "./PopularMovieList";
 
 var HomeBody = () => {
   // This will fetch the popular movies & add in the redux store
@@ -24,9 +24,7 @@ var HomeBody = () => {
         {/* { Movie title & Overview} */}
         <VideoTitle movieData={movieData} />
       </div>
-      <div className="movie-list">
-      <MovieList />
-      </div>
+      <PopularMovieList />
     </div>
   );
 };

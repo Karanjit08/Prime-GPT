@@ -422,7 +422,7 @@
 
 .home-screen{
   width: 100vw;
-  /* background-color: black; */
+  background-color: black;
 }
 .home-screen-header{
   width: 100vw;
@@ -551,6 +551,7 @@
   height: 100%;
   object-fit: cover;
   pointer-events: none; /* Prevents clicks on the video */
+  border: none;
 }
 
 .overlay {
@@ -628,6 +629,43 @@
 }
 
 /* HOME SCREEN VIDEO PLAYER ENDING */
+
+/* HOME SCREEN POPULAR MOVIE LIST ITEMS STARTING */
+.movie-list-container {
+  padding: 20px;
+  overflow: hidden;
+}
+
+.movie-list-container > h2{
+  color: white;
+  font-weight: bold;
+  font-size: 26px;
+}
+.movie-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 20px;
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+.movie-list-items {
+  flex: 0 0 auto; /* Prevents items from shrinking */
+  transition: transform 0.3s ease-in-out;
+}
+
+.movie-list-items img {
+  width: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.movie-list-items:hover img {
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+
+/* HOME SCREEN POPULAR MOVIE LIST ITEMS ENDING */
 
 
 

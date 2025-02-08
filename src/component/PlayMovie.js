@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import VideoBackgroundPlayer from "./VideoBackgroundPlayer";
-import VideoTitle from "./VideoTitle";
+
 
 const PlayMovie = () => {
   var { movieId } = useParams();
@@ -20,14 +20,17 @@ const PlayMovie = () => {
       <VideoBackgroundPlayer movieId={movieId} />
 
       {/* { Movie title & Overview} */}
-      <MovieInfo movieData = {movieData} />
+      <MovieInfo movieData = {movieData} movieId = {movieId}/>
     </div>
   );
 };
 
-var MovieInfo = ({movieData}) => {
-    var movieTitle = movieData?.[0]?.[0]?.original_title;
-    var movieOverview = movieData?.[0]?.[0]?.overview;
+var MovieInfo = ({movieData,movieId}) => {
+    // Find the movie that matches the given movieId
+  const movie = movieData[0]?.find((movie) => movie?.id?.toString() === movieId);
+
+  var movieTitle = movie?.original_title || "Title Not Available";
+  var movieOverview = movie?.overview || "Overview Not Available";
   return (
     <div>
       {/* Overlay for better text visibility */}
