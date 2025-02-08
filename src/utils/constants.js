@@ -4,5 +4,6 @@ export const header_tvShow_text = "TV Shows";
 export const header_liveTv_text = "Live TV";
 export const header_subscriptions_text = "Subcriptions";
 export const header_joinPrime_text = "Join Prime";
+export const baseImageUrl = "https://image.tmdb.org/t/p/w200";
 
 

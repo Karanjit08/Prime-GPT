@@ -3,16 +3,13 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import VideoBackgroundPlayer from "./VideoBackgroundPlayer";
 import VideoTitle from "./VideoTitle";
+import MovieList from "./MovieList";
 
 var HomeBody = () => {
   // This will fetch the popular movies & add in the redux store
   useMovieList();
   // fetch the movies from the redux store
   const movieData = useSelector((state) => state.movie.movies);
-
-  useEffect(() => {
-    console.log(movieData);
-  }, [movieData]);
 
   // Get first movie ID
   const movieId = movieData?.[0]?.[0]?.id;
@@ -26,6 +23,9 @@ var HomeBody = () => {
 
         {/* { Movie title & Overview} */}
         <VideoTitle movieData={movieData} />
+      </div>
+      <div className="movie-list">
+      <MovieList />
       </div>
     </div>
   );

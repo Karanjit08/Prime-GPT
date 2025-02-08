@@ -489,6 +489,9 @@
 .chat-button-header:hover{
   background-color: #318CE7;
 }
+.drop-down-profile{
+  z-index: 3;
+}
 .drop-down-profile > ul {
   list-style-type: none;
 }
