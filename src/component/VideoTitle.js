@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { faInfo } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const VideoTitle = ({ movieData }) => {
   // Get first movie ID
@@ -22,11 +23,13 @@ const VideoTitle = ({ movieData }) => {
 
       {/* Movie Buttons */}
       <div className="buttons">
-        <button className="play-movie">
+      <Link to={`/playMovie/${movieId}`} style={{ textDecoration: 'none' }}>
+        <button className="play-movie-button">
           <FontAwesomeIcon icon={faPlay} className="button-icon" />
           <p>Play</p>
         </button>
-        <button className="play-movie">
+        </Link>
+        <button className="info-movie-button">
           <FontAwesomeIcon icon={faInfo} className="button-icon" />
           <p>Info</p>
         </button>
