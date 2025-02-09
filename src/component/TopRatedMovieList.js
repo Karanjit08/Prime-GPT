@@ -3,24 +3,22 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { baseImageUrl } from "../utils/constants";
 
-const NowPlayingMoviesList = () => {
-  var nowPlayingMoviesLists = useSelector(
-    (state) => state.movie.nowPlayingMovies
-  );
+const TopRatedMovieList = () => {
+  var topRatedMoviesLists = useSelector((state) => state.movie.topRatedMovies);
   // Extract 'results' array safely
-  const nowPlayingMovies =
-    nowPlayingMoviesLists.length > 0 && nowPlayingMoviesLists[0]?.results
-      ? nowPlayingMoviesLists[0].results
+  const topRatedMovies =
+    topRatedMoviesLists.length > 0 && topRatedMoviesLists[0]?.results
+      ? topRatedMoviesLists[0].results
       : [];
-  console.log(`Now Playing Movie Lists: ${JSON.stringify(nowPlayingMovies)}`);
+  console.log(`Top Rated Movie Lists: ${JSON.stringify(topRatedMovies)}`);
 
   return (
     <div className="now-playing-movie-list-container">
-      <h2>Now Playing Movies</h2>
+      <h2>Top Rated Movies</h2>
       <div className="movie-scroll-container">
-        {nowPlayingMovies.map((movie) => (
+        {topRatedMovies.map((movie) => (
           <div className="movie-list-items" key={movie.id}>
-            <Link to={`/playTopRatedMovie/${movie.id}`} state={{from: nowPlayingMoviesLists}}>
+            <Link to={`/playTopRatedMovie/${movie.id}`} state={{from: topRatedMoviesLists}}>
               <img
                 key={movie.id}
                 alt={movie.original_title}
@@ -34,4 +32,4 @@ const NowPlayingMoviesList = () => {
   );
 };
 
-export default NowPlayingMoviesList;
+export default TopRatedMovieList;

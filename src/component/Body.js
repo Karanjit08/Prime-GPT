@@ -9,7 +9,8 @@ import { useDispatch } from "react-redux";
 import { auth } from "../utils/Firebase";
 import PrivateRoute from "./Private_Route";
 import PublicRoute from "./Public_Route";
-import PlayMovie from "./PlayMovie";
+import PlayTopRatedMovie from "./PlayTopRatedMovie";
+import PlayPopularMovie from "./PlayPopularMovie";
 
 var Body = () => {
   var dispatch = useDispatch();
@@ -37,12 +38,18 @@ var Body = () => {
       
     },
     {
-      path: "/playMovie/:movieId",
+      path: "/playTopRatedMovie/:movieId",
       element: 
         <PrivateRoute>
-          <PlayMovie />
+          <PlayTopRatedMovie />
         </PrivateRoute>
-      
+    },
+    {
+      path: "/playPopularMovie/:movieId",
+      element:
+        <PrivateRoute>
+          <PlayPopularMovie />
+        </PrivateRoute>
     }
   ]);
 

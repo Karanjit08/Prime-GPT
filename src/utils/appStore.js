@@ -6,7 +6,6 @@ var appStore = configureStore({
     reducer: {
         user: userSlice,
         movie: movieSlice,
-        nowPlayingMovie: movieSlice
     }
 });
 

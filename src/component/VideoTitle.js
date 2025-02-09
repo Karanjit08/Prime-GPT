@@ -23,7 +23,9 @@ const VideoTitle = ({ movieData }) => {
 
       {/* Movie Buttons */}
       <div className="buttons">
-      <Link to={`/playMovie/${movieId}`} style={{ textDecoration: 'none' }}>
+      <Link to={`/playPopularMovie/${movieId}`} 
+          state={{ from: movieData }}
+      style={{ textDecoration: 'none' }}>
         <button className="play-movie-button">
           <FontAwesomeIcon icon={faPlay} className="button-icon" />
           <p>Play</p>

@@ -24,7 +24,7 @@ const PopularMovieList = () => {
           // Map through the correct data
           movies.map((movie) => (
             <div className="movie-list-items">
-              <Link to={`/playMovie/${movie.id}`} ><img
+              <Link to={`/playPopularMovie/${movie.id}`} state={{from: popularMovieData}}  ><img
                 key={movie.id}
                 alt={movie.original_title}
                 src={`${baseImageUrl}${movie.poster_path}`}

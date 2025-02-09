@@ -21,7 +21,7 @@ const useMovieTrailer = (movieId) => {
 
         // Find the first teaser video
         const teaser = movieTrailerData.results.find(
-          (trailer) => trailer.type.toLowerCase() === "teaser"
+          (trailer) => ((trailer.type.toLowerCase() === "teaser") || (trailer.type.toLowerCase() === "trailer"))
         );
         setTeaserVideo(teaser || null);
       } catch (error) {

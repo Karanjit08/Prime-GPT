@@ -6,6 +6,10 @@ import VideoTitle from "./VideoTitle";
 import PopularMovieList from "./PopularMovieList";
 import useNowPlayingMovieList from "../Hooks/useNowPlayingMovieList";
 import NowPlayingMoviesList from "./NowPlayingMoviesList";
+import useTopRatedMovieList from "../Hooks/useTopRatedMovieList";
+import TopRatedMovieList from "./TopRatedMovieList";
+import useUpcomingMovieList from "../Hooks/useUpcomingMovieList";
+import UpcomingMovieList from "./UpcomingMovieList";
 
 var HomeBody = () => {
   // This will fetch the popular movies & add in the redux store
@@ -16,7 +20,13 @@ var HomeBody = () => {
    // This will fetch the now playing movies & add in the redux store
   useNowPlayingMovieList();
 
-  // Get first movie ID
+    // This will fetch the top rated playing movies & add in the redux store
+  useTopRatedMovieList();
+
+     // This will fetch the upcoming movies & add in the redux store
+  useUpcomingMovieList();
+
+  // Get first movie ID from Popular Movies
   const movieId = movieData?.[0]?.[0]?.id;
   console.log("Selected ID:", movieId);
 
@@ -31,6 +41,8 @@ var HomeBody = () => {
       </div>
       <PopularMovieList />
       <NowPlayingMoviesList />
+      <TopRatedMovieList />
+      <UpcomingMovieList />
     </div>
   );
 };
