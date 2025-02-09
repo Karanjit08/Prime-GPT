@@ -634,6 +634,9 @@
 .movie-list-container {
   padding: 20px;
   overflow: hidden;
+  margin-top: -200px; /* Margin top -ve will move the movie list container to top */
+  position: relative;
+  z-index: 20;
 }
 
 .movie-list-container > h2{
@@ -667,8 +670,19 @@
 
 /* HOME SCREEN POPULAR MOVIE LIST ITEMS ENDING */
 
+/* HOME SCREEN NOW PLAYNIG MOVIE LIST ITEMS STARTING */
 
+.now-playing-movie-list-container{
+  padding: 20px;
+  overflow: hidden;
+}
+.now-playing-movie-list-container > h2{
+  color: white;
+  font-weight: bold;
+  font-size: 26px;
+}
 
+/* HOME SCREEN NOW PLAYNIG MOVIE LIST ITEMS ENDING */
 
 
 /* HOME SCREEN ENDING */

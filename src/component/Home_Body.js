@@ -1,15 +1,20 @@
-import useMovieList from "../Hooks/useMovieList";
+import usePopularMovieList from "../Hooks/usePopularMovieList";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import VideoBackgroundPlayer from "./VideoBackgroundPlayer";
 import VideoTitle from "./VideoTitle";
 import PopularMovieList from "./PopularMovieList";
+import useNowPlayingMovieList from "../Hooks/useNowPlayingMovieList";
+import NowPlayingMoviesList from "./NowPlayingMoviesList";
 
 var HomeBody = () => {
   // This will fetch the popular movies & add in the redux store
-  useMovieList();
+  usePopularMovieList();
   // fetch the movies from the redux store
   const movieData = useSelector((state) => state.movie.movies);
+
+   // This will fetch the now playing movies & add in the redux store
+  useNowPlayingMovieList();
 
   // Get first movie ID
   const movieId = movieData?.[0]?.[0]?.id;
@@ -25,6 +30,7 @@ var HomeBody = () => {
         <VideoTitle movieData={movieData} />
       </div>
       <PopularMovieList />
+      <NowPlayingMoviesList />
     </div>
   );
 };

@@ -4,7 +4,7 @@ import { addMovies } from "../utils/movieSlice";
 import { useEffect } from "react";
 
 
-var useMovieList = () => {
+var usePopularMovieList = () => {
 
 
     var dispatch = useDispatch();
@@ -20,4 +20,4 @@ var useMovieList = () => {
 },[])
 }
 
-export default useMovieList;
+export default usePopularMovieList;
