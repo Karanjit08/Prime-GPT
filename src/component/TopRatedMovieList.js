@@ -13,7 +13,7 @@ const TopRatedMovieList = () => {
   console.log(`Top Rated Movie Lists: ${JSON.stringify(topRatedMovies)}`);
 
   return (
-    <div className="now-playing-movie-list-container">
+    <div id="TopRatedMovies" className="now-playing-movie-list-container">
       <h2>Top Rated Movies</h2>
       <div className="movie-scroll-container">
         {topRatedMovies.map((movie) => (

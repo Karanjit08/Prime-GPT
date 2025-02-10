@@ -13,7 +13,7 @@ const UpcomingMovieList = () => {
   console.log(`Top Rated Movie Lists: ${JSON.stringify(upcomingMovies)}`);
 
   return (
-    <div className="now-playing-movie-list-container">
+    <div id="UpcomingMovies" className="now-playing-movie-list-container">
       <h2>Upcoming Movies</h2>
       <div className="movie-scroll-container">
         {upcomingMovies.map((movie) => (

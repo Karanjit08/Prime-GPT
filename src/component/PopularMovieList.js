@@ -17,7 +17,7 @@ const PopularMovieList = () => {
   };
   
   return (
-    <div className="movie-list-container">
+    <div id="PopularMovies" className="movie-list-container">
       <h2>Popular Movies</h2>
       <div className="movie-scroll-container">
         {

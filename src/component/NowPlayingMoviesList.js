@@ -15,7 +15,7 @@ const NowPlayingMoviesList = () => {
   console.log(`Now Playing Movie Lists: ${JSON.stringify(nowPlayingMovies)}`);
 
   return (
-    <div className="now-playing-movie-list-container">
+    <div id="NowPlayingMovies" className="now-playing-movie-list-container">
       <h2>Now Playing Movies</h2>
       <div className="movie-scroll-container">
         {nowPlayingMovies.map((movie) => (

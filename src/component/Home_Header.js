@@ -1,5 +1,6 @@
 import { useState } from "react";
 import DropDownProfile from "./Drop_Down_Profile";
+import {Link} from 'react-scroll'
 
 var HomeHeader = () => {
 
@@ -22,10 +23,10 @@ var HomeHeader = () => {
           ></img>
         </div>
         <a>Home</a>
-        <a>Movies</a>
-        <a>TV Shows</a>
-        <a>Live TV</a>
-        <a>Subcriptions</a>
+        <a><Link activeClass="active" to="PopularMovies" spy={true} smooth={true}>Popular Movies</Link></a>
+        <a><Link to="NowPlayingMovies" spy={true} smooth={true}>Now Playing Movies</Link></a>
+        <a><Link to="TopRatedMovies" spy={true} smooth={true}>Top Rated Movies</Link></a>
+        <a><Link to="UpcomingMovies" spy={true} smooth={true}>Upcoming Movies</Link></a>
       </div>
       <div className="h-header-right">
         <button className="chat-button-header">Chat with Us</button>
