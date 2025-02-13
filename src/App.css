@@ -107,6 +107,33 @@
   color: black;
 }
 
+.drop-down-lang{
+  display: flex;
+  justify-content: center; /* Center align */
+  align-items: center;
+  margin: 20px; /* Outer space */
+}
+ /* Style the select dropdown */
+ .custom-select {
+  width: 200px; /* Set width */
+  height: 45px; /* Set height */
+  padding: 10px 40px 10px 12px; /* Padding with more space on the right */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #f8f9fa; /* Light background */
+  font-size: 16px; /* Text size */
+  color: #333; /* Text color */
+  cursor: pointer; /* Pointer effect */
+  outline: none;
+}
+/* Hover effect */
+.custom-select:hover {
+  background-color: #e9ecef;
+}
+
+/* Dropdown arrow styling */
+.custom-select:focus {
+  border-color: #0056b3;
+}
 
 /* WELCOME SCREEN HEADER ENDING */
 

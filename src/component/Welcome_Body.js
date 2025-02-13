@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import lang from "../utils/LanguageConstants";
 
 var WelcomeBody = () => {
 
@@ -19,24 +20,24 @@ var WelcomeBody = () => {
     <div className="welcome-body">
     <WelcomeSection 
       imageUrl = "https://m.media-amazon.com/images/G/31/AmazonVideo/2019/MLP.jpg"
-      title = "Welcome to Prime Video"
-      subTitle = "Join Prime to watch the latest movies, TV shows and award-winning Amazon Originals"
-            btnName = "Sign in to join Prime"
+      title = {lang.hindi.welcomeToPrime}
+      subTitle = {lang.hindi.joinPrimeMessage}
+            btnName = {lang.hindi.signInbtn}
     />
     <WelcomeSection 
       imageUrl="https://m.media-amazon.com/images/G/31/AmazonVideo/2021/X-site/MLP/TVOD/TVOD_MLP_Right.jpg"
-      title="Movie rentals on Prime Video"
-      subTitle="Early Access to new movies, before digital subscription"
-      btnName="Rent now"
+      title= {lang.hindi.movieRentalsMessage}
+      subTitle= {lang.hindi.earlyAccess}
+      btnName={lang.hindi.rentNow}
     />
       <div className="welcome-body-channels">
       <div className="channel-message">
         <div className="channel-message-title">
-        <h1>Your favorite subscriptions all in one place</h1>
+        <h1>{lang.hindi.favSubscriptionSubTitleMessage}</h1>
         </div>
         <div className="channel-message-sub-title">
         <h3>
-        With Prime Video Channels, find shows and movies from your favorite channels all in one place. Enjoy with an add-on subscription to Channels of your choice
+        {lang.hindi.favSubscriptionSubTitleMessage}
         </h3>
         </div>
       </div>

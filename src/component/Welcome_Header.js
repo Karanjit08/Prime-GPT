@@ -1,9 +1,21 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { header_home_text, header_liveTv_text, header_movies_text, header_subscriptions_text, header_tvShow_text, header_joinPrime_text } from "../utils/constants";
+import lang from "../utils/LanguageConstants";
+import { useDispatch, useSelector } from "react-redux";
+import { addLanguagePreference } from "../utils/languageSlice";
 
 var WelcomeHeader = () => {
+
+  const dispatch = useDispatch();
+  const selectedLanguage = useSelector((state) => state.language.languageConfig); // Get language from Redux
+
+  // Handle language change
+  const handleLanguageChange = (event) => {
+    dispatch(addLanguagePreference(event.target.value)); // Dispatch action to update Redux store
+  };
+
+
   return (
     <div className="welcome-header">
       <div className="welcome-header-left">
@@ -13,18 +25,31 @@ var WelcomeHeader = () => {
             alt="prime-logo"
           ></img>
         </div>
-        <a>{header_home_text}</a>
-        <a>{header_movies_text}</a>
-        <a>{header_tvShow_text}</a>
-        <a>{header_liveTv_text}</a>
-        <a>{header_subscriptions_text}</a>
+        <a>{lang[selectedLanguage].home}</a>
+        <a>{lang[selectedLanguage].movies}</a>
+        <a>{lang[selectedLanguage].tvShows}</a>
+        <a>{lang[selectedLanguage].liveTv}</a>
+        <a>{lang[selectedLanguage].subscriptions}</a>
       </div>
       <div className="welcome-header-right">
         <div className="header-search-icon">
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </div>
-        <button className="join-prime-header"><Link to={"/login"} className="join-prime-link">{header_joinPrime_text}</Link></button>
-
+        <button className="join-prime-header">
+          <Link to={"/login"} className="join-prime-link">
+            {lang[selectedLanguage].joinPrime}
+          </Link>
+        </button>
+        <div className="drop-down-lang">
+          <select name="Localization" id="lang"  class="custom-select"
+           value={selectedLanguage} // Bind value to Redux state
+           onChange={handleLanguageChange} // Handle change
+          >
+            <option value="en">English</option>
+            <option value="hindi">Hindi</option>
+            <option value="spanish">Spanish</option>
+          </select>
+        </div>
       </div>
     </div>
   );
