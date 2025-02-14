@@ -1,6 +1,7 @@
 import { useState } from "react";
 import DropDownProfile from "./Drop_Down_Profile";
-import {Link} from 'react-scroll'
+import {Link as ScrollLink} from 'react-scroll'
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addLanguagePreference } from "../utils/languageSlice";
 import lang from "../utils/LanguageConstants";
@@ -37,15 +38,17 @@ var HomeHeader = () => {
           ></img>
         </div>
         <a>{lang[selectedLanguage].home}</a>
-        <a><Link activeClass="active" to="PopularMovies" spy={true} smooth={true}>{lang[selectedLanguage].popularMovies}</Link></a>
-        <a><Link to="NowPlayingMovies" spy={true} smooth={true}>{lang[selectedLanguage].nowPlayingMovies}</Link></a>
-        <a><Link to="TopRatedMovies" spy={true} smooth={true}>{lang[selectedLanguage].topRatedMovies}</Link></a>
-        <a><Link to="UpcomingMovies" spy={true} smooth={true}>{lang[selectedLanguage].upcomingMovies}</Link></a>
+        <a><ScrollLink activeClass="active" to="PopularMovies" spy={true} smooth={true}>{lang[selectedLanguage].popularMovies}</ScrollLink></a>
+        <a><ScrollLink to="NowPlayingMovies" spy={true} smooth={true}>{lang[selectedLanguage].nowPlayingMovies}</ScrollLink></a>
+        <a><ScrollLink to="TopRatedMovies" spy={true} smooth={true}>{lang[selectedLanguage].topRatedMovies}</ScrollLink></a>
+        <a><ScrollLink to="UpcomingMovies" spy={true} smooth={true}>{lang[selectedLanguage].upcomingMovies}</ScrollLink></a>
       </div>
       <div className="h-header-right">
+        <Link to="/gptSearch">
         <div className="home-chat-icon">
                   <FontAwesomeIcon icon={faMessage}  size="2x"/>
                 </div>
+        </Link>
         <div className="profile-logo" 
         onClick={() => setOpenProfileDropDown(!openProfileDropDown)}
         >

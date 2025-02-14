@@ -11,6 +11,7 @@ import PrivateRoute from "./Private_Route";
 import PublicRoute from "./Public_Route";
 import PlayTopRatedMovie from "./PlayTopRatedMovie";
 import PlayPopularMovie from "./PlayPopularMovie";
+import GptSearch from "./GptSearch";
 
 var Body = () => {
   var dispatch = useDispatch();
@@ -49,6 +50,13 @@ var Body = () => {
       element:
         <PrivateRoute>
           <PlayPopularMovie />
+        </PrivateRoute>
+    },
+    {
+      path: "/gptSearch",
+      element:
+        <PrivateRoute>
+          <GptSearch />
         </PrivateRoute>
     }
   ]);
