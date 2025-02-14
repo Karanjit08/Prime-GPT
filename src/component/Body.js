@@ -11,7 +11,7 @@ import PrivateRoute from "./Private_Route";
 import PublicRoute from "./Public_Route";
 import PlayTopRatedMovie from "./PlayTopRatedMovie";
 import PlayPopularMovie from "./PlayPopularMovie";
-import GptSearch from "./GptSearch";
+import GptSearch from "./Gpt";
 
 var Body = () => {
   var dispatch = useDispatch();

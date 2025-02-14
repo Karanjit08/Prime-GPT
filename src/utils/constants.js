@@ -1,9 +1,4 @@
-export const header_home_text = "Home";
-export const header_movies_text = "Movies";
-export const header_tvShow_text = "TV Shows";
-export const header_liveTv_text = "Live TV";
-export const header_subscriptions_text = "Subcriptions";
-export const header_joinPrime_text = "Join Prime";
 export const baseImageUrl = "https://image.tmdb.org/t/p/w200";
+export const OPENAI_API_KEY = "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";
 
 
