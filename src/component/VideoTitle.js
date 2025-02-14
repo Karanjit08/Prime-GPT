@@ -3,8 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { faInfo } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import lang from "../utils/LanguageConstants";
 
 const VideoTitle = ({ movieData }) => {
+
+  const selectedLanguage = useSelector((state) => state.language.languageConfig); // Get language from Redux
   // Get first movie ID
   const movieId = movieData?.[0]?.[0]?.id;
   var movieTitle = movieData?.[0]?.[0]?.original_title;
@@ -28,12 +32,12 @@ const VideoTitle = ({ movieData }) => {
       style={{ textDecoration: 'none' }}>
         <button className="play-movie-button">
           <FontAwesomeIcon icon={faPlay} className="button-icon" />
-          <p>Play</p>
+          <p>{lang[selectedLanguage].play}</p>
         </button>
         </Link>
         <button className="info-movie-button">
           <FontAwesomeIcon icon={faInfo} className="button-icon" />
-          <p>Info</p>
+          <p>{lang[selectedLanguage].info}</p>
         </button>
       </div>
     </div>

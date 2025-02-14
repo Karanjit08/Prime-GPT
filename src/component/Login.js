@@ -7,8 +7,13 @@ import {
 } from "firebase/auth";
 import { auth } from "../utils/Firebase";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import lang from "../utils/LanguageConstants";
 
 const Login = () => {
+
+  const selectedLanguage = useSelector((state) => state.language.languageConfig); // Get language from Redux
+
   var [isSignUp, setIsSignUp] = useState(false);
 
   var toggleForm = () => {
@@ -24,18 +29,18 @@ const Login = () => {
       <div className="new-to-amazon">
         <div className="divider"></div>
         <div className="divider-text">
-          <h5>New to Amazon?</h5>
+          <h5>{lang[selectedLanguage].newToAmazon}</h5>
         </div>
         <div className="divider"></div>
       </div>
       <button className="sign-up-btn" onClick={toggleForm}>
-        {isSignUp ? <h4>Sign In</h4> : <h4>Sign Up</h4>}
+        {isSignUp ? <h4>{lang[selectedLanguage].signIn}</h4> : <h4>{lang[selectedLanguage].signUp}</h4>}
       </button>
       <div className="divider"></div>
       <div className="terms-condition-login">
-        <p>Terms & Privacy Notice</p>
-        <p>Send us feedback</p>
-        <p>Help</p>
+        <p>{lang[selectedLanguage].termsPrivacyText}</p>
+        <p>{lang[selectedLanguage].feedbackText}</p>
+        <p>{lang[selectedLanguage].helpText}</p>
       </div>
       <div className="affiliate">
         © 1996-2025, Amazon.com, Inc. or its affiliates
@@ -45,6 +50,8 @@ const Login = () => {
 };
 
 var SignInContainer = () => {
+
+  const selectedLanguage = useSelector((state) => state.language.languageConfig); // Get language from Redux
   var navigator = useNavigate();
   let [errorMessage, setErrorMessage] = useState(null);
   let email = useRef();
@@ -85,19 +92,19 @@ var SignInContainer = () => {
     <div className="sign-in-container">
       <div className="sign-in-box">
         <div className="login-text">
-          <h2>Sign In</h2>
+          <h2>{lang[selectedLanguage].signIn}</h2>
         </div>
         <div className="login-form">
           <form>
-            <label>Email Id</label>
+            <label>{lang[selectedLanguage].emailId}</label>
             <input ref={email} type="text" className="input-box" />
-            <label>Password</label>
+            <label>{lang[selectedLanguage].password}</label>
             <input ref={password} type="text" className="input-box" />
           </form>
         </div>
         <b className="error-text">{errorMessage}</b>
         <button className="continue-btn" onClick={submitData}>
-          <h4>Continue</h4>
+          <h4>{lang[selectedLanguage].continue}</h4>
         </button>
         <AggrementText />
       </div>
@@ -106,6 +113,7 @@ var SignInContainer = () => {
 };
 
 var SignUpContainer = () => {
+  const selectedLanguage = useSelector((state) => state.language.languageConfig); // Get language from Redux
   var navigator = useNavigate();
 
   let [errorSignUpMessage, setErrorSignUpMessage] = useState(null);
@@ -151,21 +159,21 @@ var SignUpContainer = () => {
     <div className="sign-in-container">
       <div className="sign-in-box">
         <div className="login-text">
-          <h2>Sign Up</h2>
+          <h2>{lang[selectedLanguage].signUp}</h2>
         </div>
         <div className="login-form">
           <form>
-            <label>Name</label>
+            <label>{lang[selectedLanguage].name}</label>
             <input ref={nameSigUp} type="text" className="input-box" />
-            <label>Email Id</label>
+            <label>{lang[selectedLanguage].emailId}</label>
             <input ref={emailSignUp} type="text" className="input-box" />
-            <label>Password</label>
+            <label>{lang[selectedLanguage].password}</label>
             <input ref={passwordSignUp} type="text" className="input-box" />
           </form>
         </div>
         <b className="error-text">{errorSignUpMessage}</b>
         <button className="continue-btn" onClick={submitSignUpData}>
-          <h4>Continue</h4>
+          <h4>{lang[selectedLanguage].continue}</h4>
         </button>
         <AggrementText />
       </div>
@@ -174,10 +182,11 @@ var SignUpContainer = () => {
 };
 
 var AggrementText = () => {
+  const selectedLanguage = useSelector((state) => state.language.languageConfig); // Get language from Redux
   return (
     <p className="agreement-text">
-      By continuing, you agree to the Amazon{" "}
-      <span className="hover-link">Conditions of Use and Privacy Notice</span>
+      {lang[selectedLanguage].aggrementText}{" "}
+      <span className="hover-link">{lang[selectedLanguage].aggrementCondition}</span>
     </p>
   );
 };

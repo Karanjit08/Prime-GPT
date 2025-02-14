@@ -503,19 +503,15 @@
   border: 5px solid white;
 }
 
-.chat-button-header{
-  background-color: #007FFF;
+.home-chat-icon{
   color: white;
-  padding: 10px 10px;
-  border-radius: 5px;
-  border: none;
-  transition: background-color 0.3s ease;
-  font-weight: 400;
-  font-size: 18px;
+  height: 20px;
+  width: auto;
   cursor: pointer;
+  transition: color 0.3s ease;
 }
-.chat-button-header:hover{
-  background-color: #318CE7;
+.home-chat-icon:hover{
+  color: #318CE7;
 }
 .drop-down-profile{
   z-index: 3;

@@ -1,8 +1,22 @@
 import { useState } from "react";
 import DropDownProfile from "./Drop_Down_Profile";
 import {Link} from 'react-scroll'
+import { useDispatch, useSelector } from "react-redux";
+import { addLanguagePreference } from "../utils/languageSlice";
+import lang from "../utils/LanguageConstants";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMessage } from "@fortawesome/free-solid-svg-icons";
+
 
 var HomeHeader = () => {
+
+  const dispatch = useDispatch();
+  const selectedLanguage = useSelector((state) => state.language.languageConfig); // Get language from Redux
+
+  // Handle language change
+  const handleLanguageChange = (event) => {
+    dispatch(addLanguagePreference(event.target.value)); // Dispatch action to update Redux store
+  };
 
     var [openProfileDropDown,setOpenProfileDropDown] = useState(false);
 
@@ -22,14 +36,16 @@ var HomeHeader = () => {
             alt="prime-logo"
           ></img>
         </div>
-        <a>Home</a>
-        <a><Link activeClass="active" to="PopularMovies" spy={true} smooth={true}>Popular Movies</Link></a>
-        <a><Link to="NowPlayingMovies" spy={true} smooth={true}>Now Playing Movies</Link></a>
-        <a><Link to="TopRatedMovies" spy={true} smooth={true}>Top Rated Movies</Link></a>
-        <a><Link to="UpcomingMovies" spy={true} smooth={true}>Upcoming Movies</Link></a>
+        <a>{lang[selectedLanguage].home}</a>
+        <a><Link activeClass="active" to="PopularMovies" spy={true} smooth={true}>{lang[selectedLanguage].popularMovies}</Link></a>
+        <a><Link to="NowPlayingMovies" spy={true} smooth={true}>{lang[selectedLanguage].nowPlayingMovies}</Link></a>
+        <a><Link to="TopRatedMovies" spy={true} smooth={true}>{lang[selectedLanguage].topRatedMovies}</Link></a>
+        <a><Link to="UpcomingMovies" spy={true} smooth={true}>{lang[selectedLanguage].upcomingMovies}</Link></a>
       </div>
       <div className="h-header-right">
-        <button className="chat-button-header">Chat with Us</button>
+        <div className="home-chat-icon">
+                  <FontAwesomeIcon icon={faMessage}  size="2x"/>
+                </div>
         <div className="profile-logo" 
         onClick={() => setOpenProfileDropDown(!openProfileDropDown)}
         >
@@ -40,6 +56,16 @@ var HomeHeader = () => {
              <DropDownProfile onMouseEnter = {handleMouseEnter} 
                 onMouseLeave = {handleMouseLeave}
              />)}
+        <div className="drop-down-lang">
+          <select name="Localization" id="lang"  class="custom-select"
+           value={selectedLanguage} // Bind value to Redux state
+           onChange={handleLanguageChange} // Handle change
+          >
+            <option value="en">English</option>
+            <option value="hindi">Hindi</option>
+            <option value="spanish">Spanish</option>
+          </select>
+        </div>
       </div>
     </div>
   );

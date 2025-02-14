@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import lang from "../utils/LanguageConstants";
+import { useSelector } from "react-redux";
 
 var WelcomeBody = () => {
 
+
+  const selectedLanguage = useSelector((state) => state.language.languageConfig); // Get language from Redux
 
   var channelLogoArr = [
     "https://m.media-amazon.com/images/G/31/AmazonVideo/2021/Channels/MLP/hoichoi-426X2946_V1._AC_SX400_QL80_FP_.jpg",
@@ -20,24 +23,24 @@ var WelcomeBody = () => {
     <div className="welcome-body">
     <WelcomeSection 
       imageUrl = "https://m.media-amazon.com/images/G/31/AmazonVideo/2019/MLP.jpg"
-      title = {lang.hindi.welcomeToPrime}
-      subTitle = {lang.hindi.joinPrimeMessage}
-            btnName = {lang.hindi.signInbtn}
+      title = {lang[selectedLanguage].welcomeToPrime}
+      subTitle = {lang[selectedLanguage].joinPrimeMessage}
+            btnName = {lang[selectedLanguage].signInbtn}
     />
     <WelcomeSection 
       imageUrl="https://m.media-amazon.com/images/G/31/AmazonVideo/2021/X-site/MLP/TVOD/TVOD_MLP_Right.jpg"
-      title= {lang.hindi.movieRentalsMessage}
-      subTitle= {lang.hindi.earlyAccess}
-      btnName={lang.hindi.rentNow}
+      title= {lang[selectedLanguage].movieRentalsMessage}
+      subTitle= {lang[selectedLanguage].earlyAccess}
+      btnName={lang[selectedLanguage].rentNow}
     />
       <div className="welcome-body-channels">
       <div className="channel-message">
         <div className="channel-message-title">
-        <h1>{lang.hindi.favSubscriptionSubTitleMessage}</h1>
+        <h1>{lang[selectedLanguage].favSubscriptionSubTitleMessage}</h1>
         </div>
         <div className="channel-message-sub-title">
         <h3>
-        {lang.hindi.favSubscriptionSubTitleMessage}
+        {lang[selectedLanguage].favSubscriptionSubTitleMessage}
         </h3>
         </div>
       </div>

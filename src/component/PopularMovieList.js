@@ -2,8 +2,12 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { baseImageUrl } from "../utils/constants";
 import { Link } from "react-router-dom";
+import lang from "../utils/LanguageConstants";
 
 const PopularMovieList = () => {
+
+  const selectedLanguage = useSelector((state) => state.language.languageConfig); // Get language from Redux
+
   // fetch the popular movies from the redux store
   const popularMovieData = useSelector((state) => state.movie.movies);
 
@@ -18,7 +22,7 @@ const PopularMovieList = () => {
   
   return (
     <div id="PopularMovies" className="movie-list-container">
-      <h2>Popular Movies</h2>
+      <h2>{lang[selectedLanguage].popularMovies}</h2>
       <div className="movie-scroll-container">
         {
           // Map through the correct data
