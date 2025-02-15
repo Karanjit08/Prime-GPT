@@ -38,4 +38,4 @@ var MovieInfo = ({movieData,movieId}) => {
   );
 };
 
-export default PlayPopularMovie
+export default PlayPopularMovie;

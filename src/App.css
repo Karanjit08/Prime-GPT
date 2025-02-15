@@ -717,7 +717,7 @@
 
 .gpt-screen{
   width: 100vw;
-  height: 100vh;
+  height: 150vh;
   /* background-color: black; */
   background: rgb(113,113,131);
 background: linear-gradient(90deg, rgba(113,113,131,1) 35%, rgba(5,17,19,1) 100%);
@@ -753,6 +753,13 @@ background: linear-gradient(90deg, rgba(113,113,131,1) 35%, rgba(5,17,19,1) 100%
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.gpt-movie-scroll-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 20px;
+  scroll-behavior: smooth; /* Enables smooth scrolling */
 }
 
 

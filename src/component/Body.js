@@ -12,6 +12,7 @@ import PublicRoute from "./Public_Route";
 import PlayTopRatedMovie from "./PlayTopRatedMovie";
 import PlayPopularMovie from "./PlayPopularMovie";
 import GptSearch from "./Gpt";
+import PlayGPTMovies from "./PlayGPTMovies";
 
 var Body = () => {
   var dispatch = useDispatch();
@@ -57,6 +58,13 @@ var Body = () => {
       element:
         <PrivateRoute>
           <GptSearch />
+        </PrivateRoute>
+    },
+    {
+      path: "/playGptMovies/:movieId",
+      element:
+        <PrivateRoute>
+            <PlayGPTMovies />
         </PrivateRoute>
     }
   ]);
