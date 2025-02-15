@@ -1,5 +1,4 @@
 
-import animationData from '../Animation - 1739598464216.json'
 export const options = {
     method: 'GET',
     headers: {
@@ -8,11 +7,3 @@ export const options = {
     }
   };
 
-export const defaultAnimationOptions = {
-  loop: true,
-  autoplay: true,
-  animationData: animationData,
-  rendererSettings: {
-    preserveAspectRatio: "xMidYMid slice"
-  }
-}

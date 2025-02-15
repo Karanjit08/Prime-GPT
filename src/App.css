@@ -678,6 +678,7 @@
 
 .movie-list-items {
   flex: 0 0 auto; /* Prevents items from shrinking */
+  align-items: center;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -717,13 +718,17 @@
 .gpt-screen{
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  /* background-color: black; */
+  background: rgb(113,113,131);
+background: linear-gradient(90deg, rgba(113,113,131,1) 35%, rgba(5,17,19,1) 100%);
 }
 
 .gpt-search-bar{
   width: 100vw;
   height: 20vh;
-  background-color: black;
+  /* background-color: black; */
+  background: rgb(113,113,131);
+background: linear-gradient(90deg, rgba(113,113,131,1) 35%, rgba(5,17,19,1) 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -748,7 +753,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.7); /* Optional: Adds a slight overlay */
 }
 
 

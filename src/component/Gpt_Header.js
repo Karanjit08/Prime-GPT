@@ -2,9 +2,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { useRef, useState } from "react";
 import axios from "axios";
-import { defaultAnimationOptions, options } from "../utils/Utility";
+import { options } from "../utils/Utility";
 import GptResults from "./Gpt_Results";
-import Lottie from "react-lottie";
 
 const GptHeader = () => {
   var searchText = useRef();
@@ -33,7 +32,7 @@ const GptHeader = () => {
     const gptQuery =
       "Act as a Movie Recommendation system and suggest some movies for the query : " +
       searchText.current.value +
-      ". only give me names of 5 movies, comma seperated like the example result given ahead. Example Result: Gadar, Sholay, Don, Golmaal, Koi Mil Gaya";
+      ". only give me names of 6 movies, comma seperated like the example result given ahead. Example Result: Gadar, Sholay, Don, Golmaal, Koi Mil Gaya";
 
     const response = await axios({
       method: "post",
@@ -78,13 +77,7 @@ const GptHeader = () => {
           <FontAwesomeIcon icon={faMagnifyingGlass} size="2x" />
         </div>
       </div>
-      {searchMovieList.length === 0 ? (
-        <div>
-          <Lottie options={defaultAnimationOptions} height={400} width={400} />
-        </div>
-      ) : (
-        <GptResults movieData={searchMovieList} isLoading={loading} />
-      )}
+      <GptResults movieData={searchMovieList} isLoading={loading} />
     </div>
   );
 };
