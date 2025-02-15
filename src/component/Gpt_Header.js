@@ -4,8 +4,14 @@ import { useRef, useState } from "react";
 import axios from "axios";
 import { options } from "../utils/Utility";
 import GptResults from "./Gpt_Results";
+import { useSelector } from "react-redux";
+import lang from "../utils/LanguageConstants";
 
 const GptHeader = () => {
+  const selectedLanguage = useSelector((state) => state.language.languageConfig); // Get language from Redux
+
+
+  // For getting search box text input value
   var searchText = useRef();
 
   // For putting the movie api data into this state variable
@@ -36,7 +42,7 @@ const GptHeader = () => {
 
     const response = await axios({
       method: "post",
-      url: "",
+      url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyA8ESap_nQeJjlFh4PzniaKYEEc8_No-C8",
       data: {
         contents: [
           {
@@ -68,7 +74,7 @@ const GptHeader = () => {
               ref={searchText}
               type="text"
               className="search-box"
-              placeholder="What would you like to watch..."
+              placeholder={lang[selectedLanguage].gptHintText}
               name="search"
             ></input>
           </form>
