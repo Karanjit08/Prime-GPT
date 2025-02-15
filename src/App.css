@@ -744,6 +744,12 @@
   border: none;
   outline: none;
 }
+.loader-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7); /* Optional: Adds a slight overlay */
+}
 
 
 

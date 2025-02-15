@@ -2,13 +2,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { useRef, useState } from "react";
 import axios from "axios";
-import { options } from "../utils/Utility";
-import { baseImageUrl } from "../utils/constants";
+import { defaultAnimationOptions, options } from "../utils/Utility";
+import GptResults from "./Gpt_Results";
+import Lottie from "react-lottie";
 
 const GptHeader = () => {
   var searchText = useRef();
 
+  // For putting the movie api data into this state variable
   var [searchMovieList, setSearchMovieList] = useState([]);
+
+  // for displaying & hiding loader till data comes
+  var [loading, setLoading] = useState(false);
 
   var getMovies = async (movie) => {
     var response = await fetch(
@@ -23,6 +28,7 @@ const GptHeader = () => {
 
   var handleSearchIconClick = async () => {
     // console.log(`Query: ${searchText.current.value}`);
+    setLoading(true);
     console.log("Loading...");
     const gptQuery =
       "Act as a Movie Recommendation system and suggest some movies for the query : " +
@@ -51,6 +57,7 @@ const GptHeader = () => {
     var movieData = await Promise.all(data);
     console.log(movieData);
     setSearchMovieList(movieData);
+    setLoading(false);
   };
 
   return (
@@ -71,21 +78,13 @@ const GptHeader = () => {
           <FontAwesomeIcon icon={faMagnifyingGlass} size="2x" />
         </div>
       </div>
-      <div className="gpt-results">
-        <div className="movie-scroll-container">
-          {searchMovieList.map((movie, index) =>
-            movie.results.length > 0 ? (
-              <div className="movie-list-items" key={index}>
-                <img
-                  key={movie.results[0].id}
-                  alt={movie.results[0].original_title}
-                  src={`${baseImageUrl}${movie.results[0].poster_path}`}
-                />
-              </div>
-            ) : null
-          )}
+      {searchMovieList.length === 0 ? (
+        <div>
+          <Lottie options={defaultAnimationOptions} height={400} width={400} />
         </div>
-      </div>
+      ) : (
+        <GptResults movieData={searchMovieList} isLoading={loading} />
+      )}
     </div>
   );
 };
