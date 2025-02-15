@@ -716,7 +716,8 @@
 
 .gpt-screen{
   width: 100vw;
-  /* background-color: black; */
+  height: 100vh;
+  background-color: black;
 }
 
 .gpt-search-bar{

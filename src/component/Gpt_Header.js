@@ -31,7 +31,7 @@ const GptHeader = () => {
 
     const response = await axios({
       method: "post",
-      url: "",
+      url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyA8ESap_nQeJjlFh4PzniaKYEEc8_No-C8",
       data: {
         contents: [
           {
@@ -72,8 +72,8 @@ const GptHeader = () => {
         </div>
       </div>
       <div className="gpt-results">
-        {
-          searchMovieList.map((movie, index) =>
+        <div className="movie-scroll-container">
+          {searchMovieList.map((movie, index) =>
             movie.results.length > 0 ? (
               <div className="movie-list-items" key={index}>
                 <img
@@ -83,8 +83,8 @@ const GptHeader = () => {
                 />
               </div>
             ) : null
-          )
-        }
+          )}
+        </div>
       </div>
     </div>
   );
