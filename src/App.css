@@ -1,6 +1,7 @@
 *{
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 /* WELCOME SCREEN */
 
@@ -21,7 +22,8 @@
   width: 70%;
   /* background-color: red; */
   display: flex;
-  justify-content: space-evenly;
+  justify-content:flex-start;
+  padding-left: 40px;
   align-items: center;
 }
 
@@ -78,7 +80,6 @@
 
 .header-search-icon{
   color: white;
-  height: 20px;
   width: auto;
   cursor: pointer;
 }
@@ -318,7 +319,7 @@
   margin-top: 20px;
 }
 .sign-in-container{
-  width: 350px;
+  width: 360px;
   height: auto;
   border-radius: 12px;
   border-style: solid;
@@ -330,7 +331,7 @@
   align-items: center;
 }
 .sign-in-box{
-  width: 320px;
+  width: 340px;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -459,7 +460,7 @@
   display: flex;
 }
 .h-header-left{
-  width: 70vw;
+  width: 75vw;
   height: 10vh;
   /* background-color: red; */
   display: flex;
@@ -505,7 +506,6 @@
 
 .home-chat-icon{
   color: white;
-  height: 20px;
   width: auto;
   cursor: pointer;
   transition: color 0.3s ease;
@@ -766,3 +766,104 @@ background: linear-gradient(90deg, rgba(113,113,131,1) 35%, rgba(5,17,19,1) 100%
 
 /* GPT SCREEN HEADER ENDING */
 /* GPT SCREEN ENDING */
+
+
+/* FOR MOBILES */
+
+@media only screen and (max-width: 767px){
+  .welcome-header {
+    height: 10vh;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+  }
+  .welcome-header-left {
+    width: 40%;
+    display: flex;
+    justify-content: start;
+    /* background-color: #0073e6; */
+  }
+  .header-logo img{
+    height: 20px;
+    width: auto;
+  }
+  .header-logo > img:hover{
+    cursor: pointer;
+  }
+  .welcome-header-right{
+    width: 70%;
+    /* background-color: greenyellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  .join-prime-header {
+    background-color: #007FFF;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-weight: 500;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    width: fit-content; /* Auto-size based on text */
+    min-width: max-content; /* Ensure proper width */
+    max-width: 180px; /* Keep responsive */
+    padding: auto;
+    white-space: nowrap; /* Prevent text breaking */
+  }
+
+  .join-prime-header:hover {
+    background-color: #318CE7;
+  }
+
+  .join-prime-link {
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: inherit; /* Prevent overriding font size */
+  }
+  .join-prime-link-body{
+    text-decoration: none;
+    color: black;
+  }
+  .drop-down-lang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0; /* Reduce margin for better spacing */
+    width: 100%; /* Ensure it fits in the container */
+  }
+
+  .custom-select {
+    width: 120px; /* Reduce width for smaller screens */
+    height: 35px; /* Reduce height */
+    padding: 5px 10px; /* Adjust padding */
+    font-size: 14px; /* Reduce font size */
+    border-radius: 5px; /* Slightly smaller rounded corners */
+    background-color: #f8f9fa; 
+    color: #333;
+    cursor: pointer;
+    outline: none;
+  }
+
+  /* Hover effect */
+  .custom-select:hover {
+    background-color: #e9ecef;
+  }
+
+  /* Focus effect */
+  .custom-select:focus {
+    border-color: #0056b3;
+  }
+
+}

@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import lang from "../utils/LanguageConstants";
 import { useDispatch, useSelector } from "react-redux";
@@ -25,16 +23,8 @@ var WelcomeHeader = () => {
             alt="prime-logo"
           ></img>
         </div>
-        <a>{lang[selectedLanguage].home}</a>
-        <a>{lang[selectedLanguage].movies}</a>
-        <a>{lang[selectedLanguage].tvShows}</a>
-        <a>{lang[selectedLanguage].liveTv}</a>
-        <a>{lang[selectedLanguage].subscriptions}</a>
       </div>
       <div className="welcome-header-right">
-        <div className="header-search-icon">
-          <FontAwesomeIcon icon={faMagnifyingGlass} />
-        </div>
         <button className="join-prime-header">
           <Link to={"/login"} className="join-prime-link">
             {lang[selectedLanguage].joinPrime}

@@ -85,7 +85,7 @@ var lang = {
         tvShows: "Programas de televisión",
         liveTv: "Televisión en vivo",
         subscriptions: "Suscripciones",
-        joinPrime: "Únete a Prime",
+        joinPrime: "Únete Prime",
         welcomeToPrime: "Bienvenido a Prime Video",
         joinPrimeMessage: "Únase a Prime para ver las últimas películas, programas de televisión y originales de Amazon galardonados",
         signInbtn: "Únete a Prime",
