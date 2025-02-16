@@ -6,6 +6,7 @@ import { options } from "../utils/Utility";
 import GptResults from "./Gpt_Results";
 import { useSelector } from "react-redux";
 import lang from "../utils/LanguageConstants";
+import { GEMINI_API_KEY } from "../utils/constants";
 
 const GptHeader = () => {
   const selectedLanguage = useSelector((state) => state.language.languageConfig); // Get language from Redux
@@ -42,7 +43,7 @@ const GptHeader = () => {
 
     const response = await axios({
       method: "post",
-      url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyA8ESap_nQeJjlFh4PzniaKYEEc8_No-C8",
+      url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?" + "key=" + GEMINI_API_KEY,
       data: {
         contents: [
           {
