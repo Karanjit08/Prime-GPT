@@ -771,6 +771,7 @@ background: linear-gradient(90deg, rgba(113,113,131,1) 35%, rgba(5,17,19,1) 100%
 /* FOR MOBILES */
 
 @media only screen and (max-width: 767px){
+  /* WELCOME SCREEN HEADER STARTING */
   .welcome-header {
     height: 10vh;
     display: flex;
@@ -865,5 +866,74 @@ background: linear-gradient(90deg, rgba(113,113,131,1) 35%, rgba(5,17,19,1) 100%
   .custom-select:focus {
     border-color: #0056b3;
   }
+
+  /* WELCOME SCREEN HEADER ENDING */
+
+  /* WELCOME SCREEN BODY STARTING */
+  .welcome-body-info{
+    position: static;
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .body-info-message{
+    position: static;
+    width: 100vw;
+    padding: 10px;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  .body-info-message > h1 {
+  font-size: clamp(1.5rem, 5vw, 2rem); /* Min 1.5rem, Scales with viewport, Max 2rem */
+  font-weight: bold;
+  color: white;
+  white-space: normal; /* Ensures wrapping */
+  text-align: center;
+  }
+  
+  .body-info-message > h3 {
+    font-size: clamp(14px, 4vw, 16px); /* Dynamically adjusts */
+  font-weight: bold;
+  color: white;
+  margin: 0px 16px 16px 0px;
+  text-align: center;
+  }
+  .body-info-logo {
+    opacity: 0.7;
+    overflow: hidden;
+  }
+  .body-info-logo > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .channel-logo {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .c-logo {
+    width: 120px; /* Adjust width for mobile */
+    height: 80px;
+  }
+  .sign-in-btn,
+  .rent-btn {
+    font-size: 16px; /* Reduce font size for better fit */
+    height: 50px; /* Slightly reduce height */
+    max-width: 90%; /* Make width more flexible */
+    width: auto; /* Adjust width dynamically */
+    padding: 10px 15px; /* Add some padding for better touch accessibility */
+  }
+  
+  /* WELCOME SCREEN BODY ENDING */
 
 }

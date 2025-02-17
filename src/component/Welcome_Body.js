@@ -36,7 +36,7 @@ var WelcomeBody = () => {
       <div className="welcome-body-channels">
       <div className="channel-message">
         <div className="channel-message-title">
-        <h1>{lang[selectedLanguage].favSubscriptionSubTitleMessage}</h1>
+        <h1>{lang[selectedLanguage].favSubscriptionTitleMessage}</h1>
         </div>
         <div className="channel-message-sub-title">
         <h3>
