@@ -260,7 +260,8 @@
   width: 200px;
   height: 140px;
   border-radius: 10px;
-  background-color:#007FFF;
+  background-color: black;
+  overflow: hidden;
 }
 .c-logo > img {
   width: 100%;
@@ -932,6 +933,65 @@ background: linear-gradient(90deg, rgba(113,113,131,1) 35%, rgba(5,17,19,1) 100%
     max-width: 90%; /* Make width more flexible */
     width: auto; /* Adjust width dynamically */
     padding: 10px 15px; /* Add some padding for better touch accessibility */
+  }
+  .welcome-body-channels{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .channel-message {
+    width: 100%;
+    height: auto;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: start;
+    align-items: center;
+  }
+  
+  .channel-message-title > h1 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: bold;
+    color: white;
+    white-space: normal; /* Ensures wrapping */
+    text-align: center;
+  }
+  
+  .channel-message-sub-title > h3 {
+    font-size: clamp(14px, 4vw, 16px); /* Dynamically adjusts */
+    font-weight: bold;
+    color: white;
+    margin: 0px 16px 16px 0px;
+    text-align: center;
+  }
+  .channel-logo {
+    width: 100%;
+    height: auto;
+    /* background-color: pink; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .c-logo {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    background-color: black;
+    overflow: hidden;
+  }
+  .c-logo > img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  .c-logo:hover > img {
+    transform: scale(1.1); /* Zoom in the image on hover */
   }
   
   /* WELCOME SCREEN BODY ENDING */
