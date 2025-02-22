@@ -9,6 +9,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMessage } from "@fortawesome/free-solid-svg-icons";
 import { isMobile } from "react-device-detect";
 import Hamburger from "hamburger-react";
+import { signOut } from "firebase/auth";
+import { auth } from "../utils/Firebase";
 
 var HomeHeader = () => {
   const dispatch = useDispatch();
@@ -23,6 +25,9 @@ var HomeHeader = () => {
 
   var [openProfileDropDown, setOpenProfileDropDown] = useState(false);
 
+  // state for showing/hiding Hamburger menu items
+  var [open, setOpen] = useState(false);
+
   var handleMouseEnter = () => {
     setOpenProfileDropDown(true);
   };
@@ -30,17 +35,65 @@ var HomeHeader = () => {
   var handleMouseLeave = () => {
     setOpenProfileDropDown(false);
   };
+
+  var handleUserLogOut = () => {
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+        navigator("/");
+      })
+      .catch((error) => {
+        // An error happened.
+      });
+  };
   return isMobile ? (
     <div className="home-screen-mobile-header">
-        <div className="header-logo">
-          <img
-            src="https://m.media-amazon.com/images/G/01/digital/video/web/logo-min-remaster.png"
-            alt="prime-logo"
-          ></img>
-        </div>
-        <div className="hamburger-logo">
-          <Hamburger />
-        </div>
+      <div className="header-mobile-logo">
+        <img
+          src="https://m.media-amazon.com/images/G/01/digital/video/web/logo-min-remaster.png"
+          alt="prime-logo"
+        ></img>
+      </div>
+      <div className="hamburger-logo">
+        <Hamburger toggle={setOpen} toggled={open} />
+        {open && (
+          <div className="hamburger-menu-container">
+            <a>
+              <ScrollLink
+                activeClass="active"
+                to="PopularMovies"
+                spy={true}
+                smooth={true}
+              >
+                {lang[selectedLanguage].popularMovies}
+              </ScrollLink>
+            </a>
+            <a>
+              <ScrollLink to="NowPlayingMovies" spy={true} smooth={true}>
+                {lang[selectedLanguage].nowPlayingMovies}
+              </ScrollLink>
+            </a>
+            <a>
+              <ScrollLink to="TopRatedMovies" spy={true} smooth={true}>
+                {lang[selectedLanguage].topRatedMovies}
+              </ScrollLink>
+            </a>
+            <a>
+              <ScrollLink to="UpcomingMovies" spy={true} smooth={true}>
+                {lang[selectedLanguage].upcomingMovies}
+              </ScrollLink>
+            </a>
+            <a onClick={handleUserLogOut}>{lang[selectedLanguage].logOut}</a>
+              <Link to="/gptSearch" style={{ textDecoration: 'none' }}>
+                <div className="home-mobile-chat-icon">
+                  <FontAwesomeIcon icon={faMessage} size="2x" />
+                  <div>Prime GPT</div>
+                </div>
+              </Link>
+           
+          </div>
+        )}
+      </div>
     </div>
   ) : (
     <div className="home-screen-header">
