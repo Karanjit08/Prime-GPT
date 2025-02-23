@@ -43,7 +43,7 @@ const GptHeader = () => {
 
     const response = await axios({
       method: "post",
-      url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=",
+      url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyA8ESap_nQeJjlFh4PzniaKYEEc8_No-C8",
       data: {
         contents: [
           {
