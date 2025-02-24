@@ -1067,7 +1067,7 @@ background: linear-gradient(90deg, rgba(113,113,131,1) 35%, rgba(5,17,19,1) 100%
   .buttons{
     width: 280px;
     position: absolute;
-    bottom: 50%;
+    bottom: 55%;
     z-index: 2;
     left: 5%;
     display: flex;

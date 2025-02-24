@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DropDownProfile from "./Drop_Down_Profile";
 import { Link as ScrollLink } from "react-scroll";
 import { Link } from "react-router-dom";
@@ -7,7 +7,7 @@ import { addLanguagePreference } from "../utils/languageSlice";
 import lang from "../utils/LanguageConstants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMessage } from "@fortawesome/free-solid-svg-icons";
-import { isMobile } from "react-device-detect";
+import { isMobile as checkMobile } from "react-device-detect";
 import Hamburger from "hamburger-react";
 import { signOut } from "firebase/auth";
 import { auth } from "../utils/Firebase";
@@ -46,6 +46,22 @@ var HomeHeader = () => {
         // An error happened.
       });
   };
+  // Logic for handling the mobile device dynamic size adjusting
+  const [isMobile, setIsMobile] = useState(checkMobile);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Adjust breakpoint as needed
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Call on mount
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  
   return isMobile ? (
     <div className="home-screen-mobile-header">
       <div className="header-mobile-logo">
@@ -84,13 +100,12 @@ var HomeHeader = () => {
               </ScrollLink>
             </a>
             <a onClick={handleUserLogOut}>{lang[selectedLanguage].logOut}</a>
-              <Link to="/gptSearch" style={{ textDecoration: 'none' }}>
-                <div className="home-mobile-chat-icon">
-                  <FontAwesomeIcon icon={faMessage} size="2x" />
-                  <div>Prime GPT</div>
-                </div>
-              </Link>
-           
+            <Link to="/gptSearch" style={{ textDecoration: "none" }}>
+              <div className="home-mobile-chat-icon">
+                <FontAwesomeIcon icon={faMessage} size="2x" />
+                <div>Prime GPT</div>
+              </div>
+            </Link>
           </div>
         )}
       </div>
