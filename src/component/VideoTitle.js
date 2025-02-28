@@ -35,10 +35,6 @@ const VideoTitle = ({ movieData }) => {
           <p>{lang[selectedLanguage].play}</p>
         </button>
         </Link>
-        <button className="info-movie-button">
-          <FontAwesomeIcon icon={faInfo} className="button-icon" />
-          <p>{lang[selectedLanguage].info}</p>
-        </button>
       </div>
     </div>
   );
