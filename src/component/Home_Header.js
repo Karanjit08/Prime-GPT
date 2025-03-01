@@ -103,7 +103,7 @@ var HomeHeader = () => {
             <Link to="/gptSearch" style={{ textDecoration: "none" }}>
               <div className="home-mobile-chat-icon">
                 <FontAwesomeIcon icon={faMessage} size="2x" />
-                <div>Prime GPT</div>
+                <div>{lang[selectedLanguage].primeGpt}</div>
               </div>
             </Link>
           </div>

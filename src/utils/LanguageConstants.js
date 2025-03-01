@@ -37,7 +37,8 @@ var lang = {
         profile: "Profile",
         settings: "Settings",
         logOut: "Log Out",
-        gptHintText: "What would you like to watch..."
+        gptHintText: "What would you like to watch...",
+        primeGpt: "Prime GPT"
     },
     hindi:{
         home: "घर",
@@ -77,7 +78,8 @@ var lang = {
         profile: "प्रोफ़ाइल",
         settings: "सेटिंग्स",
         logOut: "लॉग आउट",
-        gptHintText: "आप क्या देखना पसंद करेंगे..."
+        gptHintText: "आप क्या देखना पसंद करेंगे...",
+        primeGpt: "प्राइम जीपीटी"
     },
     spanish:{
         home: "Hogar",
@@ -117,7 +119,8 @@ var lang = {
         profile: "Perfil",
         settings: "Ajustes",
         logOut: "Finalizar la sesión",
-        gptHintText: "¿Qué te gustaría ver...?"
+        gptHintText: "¿Qué te gustaría ver...?",
+        primeGpt: "GPT principal"
     }
 }
 

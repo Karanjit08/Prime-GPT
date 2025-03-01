@@ -25,7 +25,7 @@ var DropDownProfile = ({onMouseEnter, onMouseLeave}) => {
         onMouseLeave={onMouseLeave}
         className="drop-down-profile">
             <ul className="drop-down-logout">
-            <FontAwesomeIcon  icon={faSignOut} size="2x"/>
+            <FontAwesomeIcon  icon={faSignOut} size="2x" onClick={handleUserLogOut}/>
                 <li onClick={handleUserLogOut}>{lang[selectedLanguage].logOut}</li>
             </ul>
         </div>
