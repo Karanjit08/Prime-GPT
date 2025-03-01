@@ -4,6 +4,8 @@ import {auth} from '../utils/Firebase'
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import lang from "../utils/LanguageConstants";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSignOut} from "@fortawesome/free-solid-svg-icons";
 
 var DropDownProfile = ({onMouseEnter, onMouseLeave}) => {
     const selectedLanguage = useSelector((state) => state.language.languageConfig); // Get language from Redux
@@ -22,9 +24,8 @@ var DropDownProfile = ({onMouseEnter, onMouseLeave}) => {
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         className="drop-down-profile">
-            <ul>
-                <li onClick={() => console.log('Profile Clicked')}>{lang[selectedLanguage].profile}</li>
-                <li onClick={() => console.log('Settings Clicked')}>{lang[selectedLanguage].settings}</li>
+            <ul className="drop-down-logout">
+            <FontAwesomeIcon  icon={faSignOut} size="2x"/>
                 <li onClick={handleUserLogOut}>{lang[selectedLanguage].logOut}</li>
             </ul>
         </div>

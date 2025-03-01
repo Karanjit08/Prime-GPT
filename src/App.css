@@ -358,6 +358,20 @@
   color:   rgb(200, 39, 39);
   
 }
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+
+.eye-icon {
+  position: absolute;
+  right: 30px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
+}
 .continue-btn{
   width: 320px;
   height: 30px;
@@ -537,6 +551,18 @@
   justify-content: space-evenly;
   border-radius: 8px;
   overflow: hidden;
+}
+.drop-down-profile > li {
+  font-size: larger;
+  font-weight: 600;
+}
+.drop-down-logout {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
 }
 
 /* HOME SCREEN HEADER ENDING */

@@ -9,6 +9,8 @@ import { auth } from "../utils/Firebase";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import lang from "../utils/LanguageConstants";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEyeSlash,faEye} from "@fortawesome/free-solid-svg-icons";
 
 const Login = () => {
 
@@ -88,6 +90,9 @@ var SignInContainer = () => {
     }
     return;
   };
+
+  // password hide/show 
+  const [showPassword, setShowPassword] = useState(false);
   return (
     <div className="sign-in-container">
       <div className="sign-in-box">
@@ -99,7 +104,12 @@ var SignInContainer = () => {
             <label>{lang[selectedLanguage].emailId}</label>
             <input ref={email} type="text" className="input-box" />
             <label>{lang[selectedLanguage].password}</label>
-            <input ref={password} type="text" className="input-box" />
+            <div className="password-container">
+            <input ref={password}    type={showPassword ? "text" : "password"}  className="input-box" />
+            <span className="eye-icon" onClick={() => setShowPassword(!showPassword)}>
+            {showPassword ? <FontAwesomeIcon icon={faEyeSlash} /> : <FontAwesomeIcon icon={faEye} />}
+          </span>
+            </div>
           </form>
         </div>
         <b className="error-text">{errorMessage}</b>
@@ -155,6 +165,9 @@ var SignUpContainer = () => {
     return;
   };
 
+  // password hide/show 
+  const [showPassword, setShowPassword] = useState(false);
+
   return (
     <div className="sign-in-container">
       <div className="sign-in-box">
@@ -168,7 +181,12 @@ var SignUpContainer = () => {
             <label>{lang[selectedLanguage].emailId}</label>
             <input ref={emailSignUp} type="text" className="input-box" />
             <label>{lang[selectedLanguage].password}</label>
-            <input ref={passwordSignUp} type="text" className="input-box" />
+            <div className="password-container">
+            <input ref={passwordSignUp}    type={showPassword ? "text" : "password"}  className="input-box" />
+            <span className="eye-icon" onClick={() => setShowPassword(!showPassword)}>
+            {showPassword ? <FontAwesomeIcon icon={faEyeSlash} /> : <FontAwesomeIcon icon={faEye} />}
+          </span>
+            </div>
           </form>
         </div>
         <b className="error-text">{errorSignUpMessage}</b>
