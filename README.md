@@ -29,7 +29,7 @@ Prime-GPT is a React-based web application that provides users with an immersive
  - Responsive UI that adapts to different screen sizes.
 
  6) AI-Powered Movie Suggestions (Google Gemini 1.0 PRO API)
- - Users can get personalized movie suggestions by entering prompts.
+ - Users can get personalized movie suggestions & recommendations by entering prompts.
  - The AI suggests relevant movies and provides trailers.
 
 
