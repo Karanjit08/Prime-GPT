@@ -1,26 +1,40 @@
+Prime-GPT is a React-based web application that provides users with an immersive movie discovery experience. It integrates Google Gemini 1.0 PRO API, Firebase Authentication, and the TMDB Movie API to deliver personalized movie recommendations and trailers.
 
-# Prime-GPT
 
-# Features:
+# Features
 
-<!-- PAGE 1: -->
---> Welcome Screen (Before SignIn / SignUp) (COMPLETED)
---> Login (SignIn / SignUp) Screen (COMPLETED)
---> Login (SignIn / SignUp) Authentication (COMPLETED)
---> Home Screen (After authentication) (COMPLETED)
+1) Landing Screen of Movies
+ - The homepage displays a visually engaging list of movies fetched from the TMDB API.
 
-<!-- PAGE 2:  -->
-HEADER: --> Header with Image in background and some text
-        
-BODY:   --> Comedy Movies List (See more feature)
-        --> Watch in your languages Movies List
-        --> Recomended Movies List
-        --> Horror Movies List (See more feature)
+2) User Authentication
+ - Users can create an account and log in using Firebase Authentication.
+ - Secure authentication flow with Firebase.
 
-FOOTER: --> Prime Video Copyrights Info
+3) Movie Categories (Powered by TMDB API)
+ - Popular Movies: Displays trending movies that are popular worldwide.
+ - Now Playing Movies: Showcases movies currently playing in theaters.
+ - Top Rated Movies: Features movies with the highest ratings.
+ - Upcoming Movies: Lists movies that are set to be released soon.
+ - Each category provides trailers for the listed movies.
 
-<!-- PAGE 3: -->
-Prime-GPT
-    --> Search Bar
-    --> Movie Suggestion List
+4) Localization Support
+ - The app supports multiple languages:
+   - English
+   - Hindi
+   - Spanish
+ - Users can switch between languages seamlessly.
+
+ 5) Mobile Responsiveness
+ - Optimized for mobile, and desktop viewing.
+ - Responsive UI that adapts to different screen sizes.
+
+ 6) AI-Powered Movie Suggestions (Google Gemini 1.0 PRO API)
+ - Users can get personalized movie suggestions by entering prompts.
+ - The AI suggests relevant movies and provides trailers.
+
+
+# Live Demo
+
+Check out the live version of Prime-GPT here: https://prime-gpt.netlify.app/
+
 
